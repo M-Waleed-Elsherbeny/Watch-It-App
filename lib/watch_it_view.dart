@@ -43,10 +43,17 @@ class WatchItView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              YoutubePlayer(
-                controller: YoutubePlayerController(
-                  initialVideoId: ids[index]['id'],
-                  flags: const YoutubePlayerFlags(autoPlay: false, mute: false),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                clipBehavior: Clip.hardEdge,
+                child: YoutubePlayer(
+                  controller: YoutubePlayerController(
+                    initialVideoId: ids[index]['id'],
+                    flags: const YoutubePlayerFlags(
+                      autoPlay: false,
+                      mute: false,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 8),
@@ -57,6 +64,7 @@ class WatchItView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 15),
             ],
           );
         },
