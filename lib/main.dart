@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:watch_it/core/supabase_config.dart';
-import 'package:watch_it/watch_it_view.dart';
+import 'package:watch_it/features/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Watch It App', home: const WatchItView());
+    return MaterialApp(
+      title: 'Watch It App',
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
+    );
   }
 }
